@@ -13,24 +13,24 @@
 		<h:outputScript library="js" name="shake.js"></h:outputScript>
 		<h:form id="item-form">
 			<div>
-				<h:outputLabel value="Product Name" />
+				<h:outputLabel value="Pet Name" />
 				<h:inputText id="productName" value="#{catalogItemFormBean.item.name}">
 					<f:validateRegex pattern="[A-Za-z0-9 ]+"></f:validateRegex>
 				</h:inputText>
 				<h:message for="productName"/>
 			</div>
 			<div>
-				<h:outputLabel value="Manufacturer" />
+				<h:outputLabel value="Type of Animal" />
 				<h:inputText value="#{catalogItemFormBean.item.manufacturer}"></h:inputText>
 			</div>
 			<div>
-				<h:outputLabel value="Available Date" />
+				<h:outputLabel value="Date Today" />
 				<h:inputText value="#{catalogItemFormBean.item.availableDate}">
 					<f:convertDateTime type="date" pattern="dd-MM-yyyy"/>
 				</h:inputText>
 			</div>
 			<div>
-				<h:outputLabel value="Description" />
+				<h:outputLabel value="Behavior of Pet" />
 				<h:inputTextarea value="#{catalogItemFormBean.item.description}"></h:inputTextarea>
 			</div>
 			<h:commandButton value="Submit" action="#{catalogItemFormBean.addItem()}"/>
