@@ -14,10 +14,14 @@
 		<h:form id="item-form">
 			<div>
 				<h:outputLabel value="Type of Animal:" />
-				<h:inputText id="typeOfAnimal" value="#{catalogItemFormBean.item.typeOfAnimal}">
-					<f:validateRegex pattern="[A-Za-z0-9 ]+"></f:validateRegex>
-				</h:inputText>
-				<h:message for="typeOfAnimal"/>
+				 <h:selectOneMenu id="sortInput" value="#{catalogItemFormBean.item.typeOfAnimal}">
+					 <f:selectItem itemValue="birds" itemLabel="Birds"/>
+					 <f:selectItem itemValue="cats" itemLabel="Cats"/>
+					 <f:selectItem itemValue="dogs" itemLabel="Dogs"/>
+					 <f:selectItem itemValue="fish" itemLabel="Fish"/>
+					 <f:selectItem itemValue="guinea pigs" itemLabel="Guinea Pigs"/>
+					 <f:selectItem itemValue="rabbits" itemLabel="Rabbits"/>
+				 </h:selectOneMenu>
 			</div>
 
 			<div>
