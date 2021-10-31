@@ -15,15 +15,27 @@
         <h:form>
             <h3>Update an Item:</h3>
             <div>
-                <h:outputLabel value="Name:"></h:outputLabel>
+                <h:outputLabel value="Type of Animal:"></h:outputLabel>
+                <h:inputText value="#{catalogItemDeleteBean.item.typeOfAnimal}" />
+            </div>
+            <div>
+                <h:outputLabel value="Name of Pet:"></h:outputLabel>
                 <h:inputText value="#{catalogItemDeleteBean.item.name}" />
             </div>
             <div>
-                <h:outputLabel value="Manufacturer:"></h:outputLabel>
-                <h:inputText value="#{catalogItemDeleteBean.item.manufacturer}" />
+                <h:outputLabel value="Breed:"></h:outputLabel>
+                <h:inputText value="#{catalogItemDeleteBean.item.breed}" />
             </div>
             <div>
-                <h:outputLabel value="Available Date:"></h:outputLabel>
+                <h:outputLabel value="Color:"></h:outputLabel>
+                <h:inputText value="#{catalogItemDeleteBean.item.color}" />
+            </div>
+            <div>
+                <h:outputLabel value="Behavior of Pet:"></h:outputLabel>
+                <h:inputText value="#{catalogItemDeleteBean.item.behavior}" />
+            </div>
+            <div>
+                <h:outputLabel value="Date Modified:"></h:outputLabel>
                 <h:inputText value="#{catalogItemDeleteBean.item.availableDate}">
                     <f:convertDateTime type="date" pattern="dd-MM-yyyy" />
                 </h:inputText>

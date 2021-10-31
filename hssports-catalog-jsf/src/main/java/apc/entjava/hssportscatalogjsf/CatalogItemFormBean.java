@@ -32,8 +32,8 @@ public class CatalogItemFormBean implements Serializable {
 	public String addItem() {
 //		long itemId = this.catalogBean.getItems().size() + 1;
 
-		this.catalogBean.addItem(new CatalogItem(this.item.getName(), this.item.getManufacturer(),
-				this.item.getDescription(), this.item.getAvailableDate()));
+		this.catalogBean.addItem(new CatalogItem(this.item.getTypeOfAnimal(), this.item.getName(), this.item.getBreed(),
+				this.item.getColor(), this.item.getBehavior(), this.item.getAvailableDate()));
 
 		return "list?faces-redirect=true";
 	}

@@ -13,29 +13,46 @@
 		<h:outputScript library="js" name="shake.js"></h:outputScript>
 		<h:form id="item-form">
 			<div>
-				<h:outputLabel value="Pet Name" />
+				<h:outputLabel value="Type of Animal:" />
+				<h:inputText id="typeOfAnimal" value="#{catalogItemFormBean.item.typeOfAnimal}">
+					<f:validateRegex pattern="[A-Za-z0-9 ]+"></f:validateRegex>
+				</h:inputText>
+				<h:message for="typeOfAnimal"/>
+			</div>
+
+			<div>
+				<h:outputLabel value="Name of Pet:" />
 				<h:inputText id="productName" value="#{catalogItemFormBean.item.name}">
 					<f:validateRegex pattern="[A-Za-z0-9 ]+"></f:validateRegex>
 				</h:inputText>
 				<h:message for="productName"/>
 			</div>
+
 			<div>
-				<h:outputLabel value="Type of Animal" />
-				<h:inputText id="animalType" value="#{catalogItemFormBean.item.manufacturer}">
+				<h:outputLabel value="Breed:" />
+				<h:inputText id="breed" value="#{catalogItemFormBean.item.breed}">
 					<f:validateRegex pattern="[A-Za-z ]+"></f:validateRegex>
 				</h:inputText>
-				<h:message for="animalType"/>
+				<h:message for="breed"/>
+			</div>
+
+			<div>
+				<h:outputLabel value="Color:" />
+				<h:inputText id="color" value="#{catalogItemFormBean.item.color}">
+					<f:validateRegex pattern="[A-Za-z ]+"></f:validateRegex>
+				</h:inputText>
+				<h:message for="color"/>
 			</div>
 			<div>
-				<h:outputLabel value="Date Today" />
+				<h:outputLabel value="Date Today:" />
 				<h:inputText id="todaysDate" value="#{catalogItemFormBean.item.availableDate}">
 					<f:convertDateTime type="date" pattern="dd-MM-yyyy"/>
 				</h:inputText>
 				<h:message for="todaysDate"/>
 			</div>
 			<div>
-				<h:outputLabel value="Behavior of Pet" />
-				<h:inputTextarea value="#{catalogItemFormBean.item.description}"></h:inputTextarea>
+				<h:outputLabel value="Behavior of Pet:" />
+				<h:inputTextarea value="#{catalogItemFormBean.item.behavior}"></h:inputTextarea>
 			</div>
 			<h:commandButton value="Submit" action="#{catalogItemFormBean.addItem()}"/>
 		</h:form>

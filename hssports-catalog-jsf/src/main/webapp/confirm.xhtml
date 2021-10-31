@@ -15,15 +15,27 @@
 		<h:form>
 			<h3>Please confirm that you would like to delete the following:</h3>
 			<div>
+				<h:outputLabel value="Type of Animal:"></h:outputLabel>
+				<h:outputLabel value="#{catalogItemDeleteBean.item.typeOfAnimal}" />
+			</div>
+			<div>
 				<h:outputLabel value="Name:"></h:outputLabel>
 				<h:outputLabel value="#{catalogItemDeleteBean.item.name}" />
 			</div>
 			<div>
-				<h:outputLabel value="Manufacturer:"></h:outputLabel>
-				<h:outputLabel value="#{catalogItemDeleteBean.item.manufacturer}" />
+				<h:outputLabel value="Breed:"></h:outputLabel>
+				<h:outputLabel value="#{catalogItemDeleteBean.item.breed}" />
 			</div>
 			<div>
-				<h:outputLabel value="Available Date:"></h:outputLabel>
+				<h:outputLabel value="Color:"></h:outputLabel>
+				<h:outputLabel value="#{catalogItemDeleteBean.item.color}" />
+			</div>
+			<div>
+				<h:outputLabel value="Behavior:"></h:outputLabel>
+				<h:outputLabel value="#{catalogItemDeleteBean.item.behavior}" />
+			</div>
+			<div>
+				<h:outputLabel value="Date Modified:"></h:outputLabel>
 				<h:outputLabel value="#{catalogItemDeleteBean.item.availableDate}">
 					<f:convertDateTime type="date" pattern="dd-MM-yyyy" />
 				</h:outputLabel>

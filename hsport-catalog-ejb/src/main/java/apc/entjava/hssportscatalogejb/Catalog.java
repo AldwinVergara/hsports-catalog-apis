@@ -48,11 +48,14 @@ public class Catalog implements CatalogLocal {
 
 	@Override
 	public void updateItem(CatalogItem item) {
-		this.entityManager.createQuery("update CatalogItem c set c.name=:itemName, c.availableDate=:itemDate, c.description=:itemDesc where c.itemId=:id")
+		this.entityManager.createQuery("update CatalogItem c set c.typeOfAnimal=:itemTypeOfAnimal, c.name=:itemName, c.breed=:itemBreed, c.color=:itemColor, c.availableDate=:itemDate, c.behavior=:itemBehavior where c.itemId=:id")
 				.setParameter("id", item.getItemId())
+				.setParameter("itemTypeOfAnimal", item.getTypeOfAnimal())
 				.setParameter("itemName", item.getName())
+				.setParameter("itemBreed", item.getBreed())
+				.setParameter("itemColor", item.getColor())
 				.setParameter("itemDate",item.getAvailableDate())
-				.setParameter("itemDesc",item.getDescription())
+				.setParameter("itemBehavior",item.getBehavior())
 				.executeUpdate();
 	}
 

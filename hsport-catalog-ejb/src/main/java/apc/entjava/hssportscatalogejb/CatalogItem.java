@@ -12,14 +12,24 @@ public class CatalogItem {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long itemId;
 
+	@Column(name="TYPE_OF_ANIMAL")
+	private String typeOfAnimal;
+
 	@Column(name="NAME")
 	private String name;
 
-	@Column(name="MANUFACTURER")
-	private String manufacturer;
+	//@Column(name="MANUFACTURER")
+	//private String manufacturer;
+	@Column(name="BREED")
+	private String breed;
 
-	@Column(name = "DESCRIPTION")
-	private String description;
+	@Column(name="COLOR")
+	private String color;
+
+	//@Column(name = "DESCRIPTION")
+	//private String description;
+	@Column(name = "BEHAVIOR")
+	private String behavior;
 
 	@Column(name = "AVAILABLE_DATE")
 	private Date availableDate;
@@ -28,11 +38,15 @@ public class CatalogItem {
 		
 	}
 	
-	public CatalogItem(String name, String manufacturer, String description, Date availableDate) {
+	public CatalogItem(String typeOfAnimal, String name, String breed, String color, String behavior, Date availableDate) {
 		super();
+		this.typeOfAnimal = typeOfAnimal;
 		this.name = name;
-		this.manufacturer = manufacturer;
-		this.description = description;
+		this.breed = breed;
+		this.color = color;
+		this.behavior = behavior;
+		//this.manufacturer = manufacturer;
+		//this.description = description;
 		this.availableDate = availableDate;
 	}
 
@@ -44,6 +58,10 @@ public class CatalogItem {
 		this.itemId = itemId;
 	}
 
+	public String getTypeOfAnimal() {return typeOfAnimal;}
+
+	public void setTypeOfAnimal(String typeOfAnimal) {this.typeOfAnimal = typeOfAnimal;}
+
 	public String getName() {
 		return name;
 	}
@@ -52,34 +70,43 @@ public class CatalogItem {
 		this.name = name;
 	}
 
-	public String getManufacturer() {
-		return manufacturer;
-	}
+	public String getBreed() {return breed;}
 
-	public void setManufacturer(String manufacturer) {
-		this.manufacturer = manufacturer;
-	}
+	public void setBreed(String breed) {this.breed = breed;}
 
-	public String getDescription() {
-		return description;
-	}
+	public String getColor() {return color;}
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+	public void setColor(String color) {this.color = color;}
 
-	public Date getAvailableDate() {
-		return availableDate;
-	}
+	/*public String getManufacturer() {
+            return manufacturer;
+        }
 
-	public void setAvailableDate(Date availableDate) {
-		this.availableDate = availableDate;
-	}
+        public void setManufacturer(String manufacturer) {
+            this.manufacturer = manufacturer;
+        }
+
+        public String getDescription() {
+            return description;
+        }
+
+        public void setDescription(String description) {
+            this.description = description;
+        }
+        */
+
+	public String getBehavior() {return behavior;}
+
+	public void setBehavior(String behavior) {this.behavior = behavior;}
+
+	public Date getAvailableDate() {return availableDate;}
+
+	public void setAvailableDate(Date availableDate) {this.availableDate = availableDate;}
 
 	@Override
 	public String toString() {
-		return "CatalogItem [itemId=" + itemId + ", name=" + name + ", manufacturer=" + manufacturer + ", description="
-				+ description + ", availableDate=" + availableDate + "]";
+		return "CatalogItem [itemId=" + itemId + ", typeOfAnimal=" + typeOfAnimal + ", name=" + name + ", breed=" + breed + ", color=" + color + ", behavior="
+				+ behavior + ", availableDate=" + availableDate + "]";
 	}
 
 }
