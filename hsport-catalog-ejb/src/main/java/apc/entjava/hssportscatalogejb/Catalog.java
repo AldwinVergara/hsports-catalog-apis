@@ -74,6 +74,6 @@ public class Catalog implements CatalogLocal {
 	@Override
 	public List<CatalogItem> sortByType(String name) {
 		return this.entityManager.createQuery("select c from CatalogItem c" +
-				" where c.typeOfAnimal like :typeOfAnimal", CatalogItem.class).setParameter("typeOfAnimal", "%" + name + "%").getResultList();
+				" where c.typeOfAnimal like :typeOfAnimal", CatalogItem.class).setParameter("typeOfAnimal",name).getResultList();
 	}
 }
