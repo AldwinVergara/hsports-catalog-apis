@@ -21,13 +21,17 @@
 			</div>
 			<div>
 				<h:outputLabel value="Type of Animal" />
-				<h:inputText value="#{catalogItemFormBean.item.manufacturer}"></h:inputText>
+				<h:inputText id="animalType" value="#{catalogItemFormBean.item.manufacturer}">
+					<f:validateRegex pattern="[A-Za-z ]+"></f:validateRegex>
+				</h:inputText>
+				<h:message for="animalType"/>
 			</div>
 			<div>
 				<h:outputLabel value="Date Today" />
-				<h:inputText value="#{catalogItemFormBean.item.availableDate}">
-					<f:convertDateTime type="date" pattern="dd-MM-yyyy"/>
+				<h:inputText id="todaysDate" value="#{catalogItemFormBean.item.availableDate}">
+						<f:convertDateTime type="date" pattern="dd-MM-yyyy"/>
 				</h:inputText>
+				<h:message for="todaysDate"/>
 			</div>
 			<div>
 				<h:outputLabel value="Behavior of Pet" />
