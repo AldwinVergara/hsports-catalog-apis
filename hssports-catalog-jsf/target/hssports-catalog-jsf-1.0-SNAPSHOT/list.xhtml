@@ -56,7 +56,9 @@
 			</h:column>
 			<h:column>
 				<f:facet name="header">Date Modified</f:facet>
-				<h:outputText value="#{item.availableDate}" />
+				<h:outputText value="#{item.availableDate}">
+					<f:convertDateTime type="date" dateStyle="medium"/>
+				</h:outputText>
 			</h:column>
 			<h:column>
 				<f:facet name="header">Behavior of Pet</f:facet>

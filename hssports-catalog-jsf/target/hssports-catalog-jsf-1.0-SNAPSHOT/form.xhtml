@@ -22,12 +22,13 @@
 		<h:form id="item-form">
 			<div>
 				 <h:selectOneMenu class="uk-select" id="sortInput" value="#{catalogItemFormBean.item.typeOfAnimal}">
-					 <f:selectItem itemValue="Birds" itemLabel="Birds"/>
-					 <f:selectItem itemValue="Cats" itemLabel="Cats"/>
-					 <f:selectItem itemValue="Dogs" itemLabel="Dogs"/>
+					 <f:selectItem itemValue="#{null}" itemLabel="--Type of Animal--" hideNoSelectionOption="true"/>
+					 <f:selectItem itemValue="Birds" itemLabel="Bird"/>
+					 <f:selectItem itemValue="Cats" itemLabel="Cat"/>
+					 <f:selectItem itemValue="Dogs" itemLabel="Dog"/>
 					 <f:selectItem itemValue="Fish" itemLabel="Fish"/>
-					 <f:selectItem itemValue="Guinea pigs" itemLabel="Guinea pigs"/>
-					 <f:selectItem itemValue="Rabbits" itemLabel="Rabbits"/>
+					 <f:selectItem itemValue="Guinea pigs" itemLabel="Guinea Pig"/>
+					 <f:selectItem itemValue="Rabbits" itemLabel="Rabbit"/>
 				 </h:selectOneMenu>
 			</div>
 
@@ -46,13 +47,13 @@
 			</div>
 
 			<div>
-				<h:inputText class="uk-input" type="text" a:placeholder="Color" value="#{catalogItemFormBean.item.color}">
+				<h:inputText class="uk-input" type="text" a:placeholder="Color"  id="color" value="#{catalogItemFormBean.item.color}">
 					<f:validateRegex pattern="[A-Za-z ]+"></f:validateRegex>
 				</h:inputText>
 				<h:message for="color"/>
 			</div>
 			<div>
-				<h:inputText class="uk-input" type="text" a:placeholder="Date Today" id="todaysDate" value="#{catalogItemFormBean.item.availableDate}">
+				<h:inputText class="uk-input" type="text" a:placeholder="Date Today (dd-MM-yyyy)" id="todaysDate" value="#{catalogItemFormBean.item.availableDate}">
 					<f:convertDateTime type="date" pattern="dd-MM-yyyy"/>
 				</h:inputText>
 				<h:message for="todaysDate"/>

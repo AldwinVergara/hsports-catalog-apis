@@ -22,7 +22,7 @@
 		<h:form id="item-form">
 			<div>
 				 <h:selectOneMenu class="uk-select" id="sortInput" value="#{catalogItemFormBean.item.typeOfAnimal}">
-					 <f:selectItem itemValue="Types" itemLabel="Type of Animal" itemDisabled="true"/>
+					 <f:selectItem itemValue="#{null}" itemLabel="--Type of Animal--" hideNoSelectionOption="true"/>
 					 <f:selectItem itemValue="Birds" itemLabel="Bird"/>
 					 <f:selectItem itemValue="Cats" itemLabel="Cat"/>
 					 <f:selectItem itemValue="Dogs" itemLabel="Dog"/>
