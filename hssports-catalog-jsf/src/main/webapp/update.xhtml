@@ -41,7 +41,7 @@
                 </h:inputText>
             </div>
             <h:commandButton action="#{catalogItemDeleteBean.updateItem}" value="Submit" />
-           <h:commandButton action="list" value="Cancel" />
+           <h:commandButton action="list?faces-redirect=true" value="Cancel" />
         </h:form>
     </ui:define>
 </ui:composition>
