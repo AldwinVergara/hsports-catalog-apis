@@ -22,7 +22,22 @@
             </h:commandButton>
         </h:form>
 
-		<h:dataTable id="dataTable" value="#{catalogItemFormBean.items}" var="item">
+		<h:form>
+			<h:outputLabel value="Sort by type: "/>
+			<h:selectOneMenu id="sortInput" value="#{catalogItemFormBean.sortText}">
+				<f:selectItem itemValue="birds" itemLabel="Birds"/>
+				<f:selectItem itemValue="cats" itemLabel="Cats"/>
+				<f:selectItem itemValue="dogs" itemLabel="Dogs"/>
+				<f:selectItem itemValue="fish" itemLabel="Fish"/>
+				<f:selectItem itemValue="guinea pigs" itemLabel="Guinea Pigs"/>
+				<f:selectItem itemValue="rabbits" itemLabel="Rabbits"/>
+			</h:selectOneMenu>
+			<h:commandButton value="Sort" action="#{catalogItemFormBean.sortByType()}">
+				<f:ajax execute="sortInput" render="dataTable"/>
+			</h:commandButton>
+		</h:form>
+
+		<h:dataTable class="uk-table uk-table-small uk-table-divider" id="dataTable" value="#{catalogItemFormBean.items}" var="item">
 			<h:column>
 				<f:facet name="header">Type of Animal</f:facet>
 				<h:outputText value="#{item.typeOfAnimal}" />

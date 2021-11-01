@@ -7,8 +7,18 @@
    		<f:loadBundle basename="messages" var="msg" />
 		<h:head>
 		<title><ui:insert name="pageTitle">Page Title</ui:insert></title>
+        <!-- UIkit CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.8.0/dist/css/uikit.min.css" />
+
+        <!-- UIkit JS -->
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.8.0/dist/js/uikit.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.8.0/dist/js/uikit-icons.min.js"></script>
 		<style type="text/css">
-			body {
+			html, body {
+				background-image:url("https://i.imgur.com/CjgwQQt.jpg");
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-attachment: fixed;
 				  font-family: Verdana, Arial, Helvetica, sans-serif;
 				  font-size: 14px;
 			}
@@ -28,42 +38,20 @@
 		</h:head>
 
 <body bgcolor="#ffffff">
-<table style="border:1px solid #CAD6E0"  align="center" cellpadding="0" cellspacing="0" border="0" width="400">
-<tbody>
+<div class="uk-container uk-position-center uk-container-small">
+<div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid="">
+	<div class="uk-card-media-left uk-cover-container">
+		<h:graphicImage style="width: 100%;height: 100%;object-fit: cover" library="img" value="/resources/img/pet.jpg" height="200px" uk-cover=""/>
+	</div>
+	<div>
+		<div class="uk-card-body">
+			<ui:insert class="uk-card-title" name="pageHeader">Page Header</ui:insert>
+			<ui:insert name="body">Page Body</ui:insert>
+		</div>
+	</div>
+</div>
+</div>
 
-	<tr>
-		<td class="header" height="42" align="center" valign="middle" width="100%" bgcolor="#E4EBEB">
-			<ui:insert name="pageHeader">Page Header</ui:insert>
-		</td>
-	</tr>
-	<tr>
-		<td height="1" width="100%" bgcolor="#CAD6E0"></td>
-	</tr>	
-
-	<tr>
-		<td width="100%"  colspan="2">
-			<table width="100%" style="height:150px" align="left" cellpadding="0" cellspacing="0" border="0">
-			<tbody>
-				<tr>
-					<td><h:graphicImage library="img" value="/resources/img/pet.jpg" height="200px"/></td>
-				</tr>
-				<tr>
-					<td align="center" width="100%" valign="middle">
-				
-					<ui:insert name="body">Page Body</ui:insert>
-					
-					</td>
-				</tr>
-			</tbody>
-			</table>
-		</td>
-	</tr>	
-	
-	<tr>
-		<td colspan="2"  valign="bottom" height="1" width="100%" bgcolor="#CAD6E0"></td>
-	</tr>
-</tbody>
-</table>
 </body>
 		
 </html>
