@@ -41,7 +41,7 @@
 				</h:outputLabel>
 			</div>
 			<h:commandButton action="#{catalogItemDeleteBean.removeItem()}" value="Submit" />
-			<h:commandButton action="list" value="Cancel" />
+			<h:commandButton action="list?faces-redirect=true" value="Cancel" />
 		</h:form>
 	</ui:define>
 </ui:composition>
