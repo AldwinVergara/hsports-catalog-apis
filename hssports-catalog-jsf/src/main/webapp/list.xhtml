@@ -22,7 +22,22 @@
             </h:commandButton>
         </h:form>
 
-		<h:dataTable id="dataTable" value="#{catalogItemFormBean.items}" var="item">
+		<h:form>
+			<h:outputLabel value="Sort by type: "/>
+			<h:selectOneMenu id="sortInput" value="#{catalogItemFormBean.sortText}">
+				<f:selectItem itemValue="Birds" itemLabel="Birds"/>
+				<f:selectItem itemValue="Cats" itemLabel="Cats"/>
+				<f:selectItem itemValue="Dogs" itemLabel="Dogs"/>
+				<f:selectItem itemValue="Fish" itemLabel="Fish"/>
+				<f:selectItem itemValue="Guinea pigs" itemLabel="Guinea Pigs"/>
+				<f:selectItem itemValue="Rabbits" itemLabel="Rabbits"/>
+			</h:selectOneMenu>
+			<h:commandButton value="Sort" action="#{catalogItemFormBean.sortByType()}">
+				<f:ajax execute="sortInput" render="dataTable"/>
+			</h:commandButton>
+		</h:form>
+
+		<h:dataTable class="uk-table uk-table-small uk-table-divider" id="dataTable" value="#{catalogItemFormBean.items}" var="item">
 			<h:column>
 				<f:facet name="header">Type of Animal</f:facet>
 				<h:outputText value="#{item.typeOfAnimal}" />
@@ -38,10 +53,6 @@
 			<h:column>
 				<f:facet name="header">Color</f:facet>
 				<h:outputText value="#{item.color}" />
-			</h:column>
-			<h:column>
-				<f:facet name="header">Behavior</f:facet>
-				<h:outputText value="#{item.behavior}" />
 			</h:column>
 			<h:column>
 				<f:facet name="header">Date Modified</f:facet>

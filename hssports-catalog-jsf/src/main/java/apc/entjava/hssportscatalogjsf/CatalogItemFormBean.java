@@ -25,9 +25,13 @@ public class CatalogItemFormBean implements Serializable {
 
 	private String searchText;
 
+	private String sortText;
+
 	public void searchByName() {
 		this.items = this.catalogBean.searchByName(this.searchText);
 	}
+
+	public void sortByType() { this.items = this.catalogBean.sortByType(this.sortText); }
 
 	public String addItem() {
 //		long itemId = this.catalogBean.getItems().size() + 1;
@@ -56,6 +60,14 @@ public class CatalogItemFormBean implements Serializable {
 
 	public void setSearchText(String searchText) {
 		this.searchText = searchText;
+	}
+
+	public String getSortText() {
+		return sortText;
+	}
+
+	public void setSortText(String sortText) {
+		this.sortText = sortText;
 	}
 
 	public CatalogItem getItem() {

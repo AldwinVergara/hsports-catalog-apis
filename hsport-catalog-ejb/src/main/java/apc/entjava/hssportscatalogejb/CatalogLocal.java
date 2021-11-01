@@ -19,4 +19,5 @@ public interface CatalogLocal {
 
 	public List<CatalogItem> searchByName(String name);
 
+	public List<CatalogItem> sortByType(String name);
 }

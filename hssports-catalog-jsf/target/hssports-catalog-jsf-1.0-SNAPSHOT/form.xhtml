@@ -2,59 +2,65 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
-	xmlns:h="http://xmlns.jcp.org/jsf/html">
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+
+
 
 <ui:composition template="/template.xhtml">
 	<ui:define name="pageHeader">
 		<h:link value="#{msg['form.pageTitle']}" outcome="form"/> |
 		<h:link value="#{msg['list.pageTitle']}" outcome="list"/>
 	</ui:define>
+	<style>
+		.uk-input,.uk-select,.uk-textarea{
+			margin: 5px!important;
+		}
+	</style>
 	<ui:define name="body">
 		<h:outputScript library="js" name="shake.js"></h:outputScript>
 		<h:form id="item-form">
 			<div>
-				<h:outputLabel value="Type of Animal:" />
-				<h:inputText id="typeOfAnimal" value="#{catalogItemFormBean.item.typeOfAnimal}">
-					<f:validateRegex pattern="[A-Za-z0-9 ]+"></f:validateRegex>
-				</h:inputText>
-				<h:message for="typeOfAnimal"/>
+				 <h:selectOneMenu class="uk-select" id="sortInput" value="#{catalogItemFormBean.item.typeOfAnimal}">
+					 <f:selectItem itemValue="Birds" itemLabel="Birds"/>
+					 <f:selectItem itemValue="Cats" itemLabel="Cats"/>
+					 <f:selectItem itemValue="Dogs" itemLabel="Dogs"/>
+					 <f:selectItem itemValue="Fish" itemLabel="Fish"/>
+					 <f:selectItem itemValue="Guinea pigs" itemLabel="Guinea pigs"/>
+					 <f:selectItem itemValue="Rabbits" itemLabel="Rabbits"/>
+				 </h:selectOneMenu>
 			</div>
 
 			<div>
-				<h:outputLabel value="Name of Pet:" />
-				<h:inputText id="productName" value="#{catalogItemFormBean.item.name}">
+				<h:inputText class="uk-input" type="text" a:placeholder="Name of Pet" id="productName" value="#{catalogItemFormBean.item.name}">
 					<f:validateRegex pattern="[A-Za-z0-9 ]+"></f:validateRegex>
 				</h:inputText>
 				<h:message for="productName"/>
 			</div>
 
 			<div>
-				<h:outputLabel value="Breed:" />
-				<h:inputText id="breed" value="#{catalogItemFormBean.item.breed}">
+				<h:inputText class="uk-input" type="text" a:placeholder="Breed" id="breed" value="#{catalogItemFormBean.item.breed}">
 					<f:validateRegex pattern="[A-Za-z ]+"></f:validateRegex>
 				</h:inputText>
 				<h:message for="breed"/>
 			</div>
 
 			<div>
-				<h:outputLabel value="Color:" />
-				<h:inputText id="color" value="#{catalogItemFormBean.item.color}">
+				<h:inputText class="uk-input" type="text" a:placeholder="Color" value="#{catalogItemFormBean.item.color}">
 					<f:validateRegex pattern="[A-Za-z ]+"></f:validateRegex>
 				</h:inputText>
 				<h:message for="color"/>
 			</div>
 			<div>
-				<h:outputLabel value="Date Today:" />
-				<h:inputText id="todaysDate" value="#{catalogItemFormBean.item.availableDate}">
+				<h:inputText class="uk-input" type="text" a:placeholder="Date Today" id="todaysDate" value="#{catalogItemFormBean.item.availableDate}">
 					<f:convertDateTime type="date" pattern="dd-MM-yyyy"/>
 				</h:inputText>
 				<h:message for="todaysDate"/>
 			</div>
 			<div>
-				<h:outputLabel value="Behavior of Pet:" />
-				<h:inputTextarea value="#{catalogItemFormBean.item.behavior}"></h:inputTextarea>
+				<h:inputTextarea class="uk-textarea" rows="5" a:placeholder="Behavior of Pet" value="#{catalogItemFormBean.item.behavior}"></h:inputTextarea>
 			</div>
-			<h:commandButton value="Submit" action="#{catalogItemFormBean.addItem()}"/>
+			<h:commandButton class="uk-button uk-button-default uk-button-small" value="Submit" action="#{catalogItemFormBean.addItem()}"/>
 		</h:form>
 	</ui:define>
 </ui:composition>
