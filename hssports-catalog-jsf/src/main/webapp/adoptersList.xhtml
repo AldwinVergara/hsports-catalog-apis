@@ -12,32 +12,9 @@
         <h:link value="#{msg['form.pageTitle']}" outcome="form"/> |
         <h:link value="#{msg['list.pageTitle']}" outcome="list"/> |
         <h:link value="#{msg['adoption.pageTitle']}" outcome="adoptionForm"/>
+        <h:link value="#{msg['adoption_list.pageTitle']}" outcome="adoptersList"/>
     </ui:define>
     <ui:define name="body">
-
-<!--        <h:form>-->
-<!--            <h:outputLabel value="Search by Name:" />-->
-<!--            <h:inputText id="searchInput" value="#{catalogItemFormBean.searchText}" />-->
-<!--            <h:commandButton action="#{catalogItemFormBean.searchByName}" value="Search">-->
-<!--                <f:ajax execute="searchInput" render="dataTable" />-->
-<!--            </h:commandButton>-->
-<!--        </h:form>-->
-
-<!--        <h:form>-->
-<!--            <h:outputLabel value="Sort by type: "/>-->
-<!--            <h:selectOneMenu id="sortInput" value="#{catalogItemFormBean.sortText}">-->
-<!--                <f:selectItem itemValue="Birds" itemLabel="Birds"/>-->
-<!--                <f:selectItem itemValue="Cats" itemLabel="Cats"/>-->
-<!--                <f:selectItem itemValue="Dogs" itemLabel="Dogs"/>-->
-<!--                <f:selectItem itemValue="Fish" itemLabel="Fish"/>-->
-<!--                <f:selectItem itemValue="Guinea pigs" itemLabel="Guinea Pigs"/>-->
-<!--                <f:selectItem itemValue="Rabbits" itemLabel="Rabbits"/>-->
-<!--            </h:selectOneMenu>-->
-<!--            <h:commandButton value="Sort" action="#{catalogItemFormBean.sortByType()}">-->
-<!--                <f:ajax execute="sortInput" render="dataTable"/>-->
-<!--            </h:commandButton>-->
-<!--        </h:form>-->
-
         <h:dataTable class="uk-table uk-table-small uk-table-divider" id="dataTable" value="#{adopterFormBean.adopters}" var="adopter">
             <h:column>
                 <f:facet name="header">First Name</f:facet>
@@ -54,6 +31,10 @@
             <h:column>
                 <f:facet name="header">Email</f:facet>
                 <h:outputText value="#{adopter.email}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Address</f:facet>
+                <h:outputText value="#{adopter.address}" />
             </h:column>
             <h:column>
                 <f:facet name="header">Date Modified</f:facet>
