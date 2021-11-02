@@ -63,73 +63,23 @@
 			<div>
 				<h:outputText value="Select Pets:" />
 			</div>
+<!--			<h:selectOneMenu value="#{catalogItemFormBean.item.typeOfAnimal}">-->
+<!--				<ui:repeat value="#{catalogItemFormBean.items}" var="item">-->
+<!--					<f:selectItem value="#{item.name}">#{item.name}</f:selectItem>-->
+<!--				</ui:repeat>-->
+<!--			</h:selectOneMenu>-->
+
+			<!-- dummy drop down -->
+			<!-- change binding -->
+			<!-- and convert html to jsf tags -->
+			<select>
+				<ui:repeat value="#{catalogItemFormBean.items}" var="val">
+					<option value="#{val.name}">#{val.name}</option>
+				</ui:repeat>
+			</select>
 
 			<h:commandButton class="uk-button uk-button-default uk-button-small" value="Submit" action="#{catalogItemFormBean.addItem()}"/>
 		</h:form>
-
-		<h:form>
-			<h:outputLabel value="Search by Name:" />
-			<h:inputText id="searchInput" value="#{catalogItemFormBean.searchText}" />
-			<h:commandButton action="#{catalogItemFormBean.searchByName}" value="Search">
-				<f:ajax execute="searchInput" render="dataTable" />
-			</h:commandButton>
-		</h:form>
-
-		<h:form>
-			<h:outputLabel value="Sort by type: "/>
-			<h:selectOneMenu id="sortInput" value="#{catalogItemFormBean.sortText}">
-				<f:selectItem itemValue="Birds" itemLabel="Birds"/>
-				<f:selectItem itemValue="Cats" itemLabel="Cats"/>
-				<f:selectItem itemValue="Dogs" itemLabel="Dogs"/>
-				<f:selectItem itemValue="Fish" itemLabel="Fish"/>
-				<f:selectItem itemValue="Guinea pigs" itemLabel="Guinea Pigs"/>
-				<f:selectItem itemValue="Rabbits" itemLabel="Rabbits"/>
-			</h:selectOneMenu>
-			<h:commandButton value="Sort" action="#{catalogItemFormBean.sortByType()}">
-				<f:ajax execute="sortInput" render="dataTable"/>
-			</h:commandButton>
-		</h:form>
-
-		<h:dataTable class="uk-table uk-table-small uk-table-divider" id="dataTable" value="#{catalogItemFormBean.items}" var="item">
-			<h:column>
-				<f:facet name="header">Type of Animal</f:facet>
-				<h:outputText value="#{item.typeOfAnimal}" />
-			</h:column>
-			<h:column>
-				<f:facet name="header">Name of Pet</f:facet>
-				<h:outputText value="#{item.name}" />
-			</h:column>
-			<h:column>
-				<f:facet name="header">Breed</f:facet>
-				<h:outputText value="#{item.breed}" />
-			</h:column>
-			<h:column>
-				<f:facet name="header">Color</f:facet>
-				<h:outputText value="#{item.color}" />
-			</h:column>
-			<h:column>
-				<f:facet name="header">Date Modified</f:facet>
-				<h:outputText value="#{item.availableDate}">
-					<f:convertDateTime type="date" dateStyle="medium"/>
-				</h:outputText>
-			</h:column>
-			<h:column>
-				<f:facet name="header">Behavior of Pet</f:facet>
-				<h:outputText value="#{item.behavior}" />
-			</h:column>
-			<h:column>
-				<h:link value="Remove" outcome="confirm">
-					<f:param name="itemId" value="#{item.itemId}"/>
-				</h:link>
-			</h:column>
-			<h:column>
-				<h:link value="Edit" outcome="update">
-					<f:param name="itemId" value="#{item.itemId}"/>
-				</h:link>
-			</h:column>
-
-			<h:commandButton class="uk-button uk-button-default uk-button-small" value="Submit" action="#{catalogItemFormBean.addItem()}"/>
-		</h:dataTable>
 	</ui:define>
 </ui:composition>
 </html>
