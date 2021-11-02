@@ -63,20 +63,13 @@
 			<div>
 				<h:outputText value="Select Pets:" />
 			</div>
-<!--			<h:selectOneMenu value="#{catalogItemFormBean.item.typeOfAnimal}">-->
-<!--				<ui:repeat value="#{catalogItemFormBean.items}" var="item">-->
-<!--					<f:selectItem value="#{item.name}">#{item.name}</f:selectItem>-->
-<!--				</ui:repeat>-->
-<!--			</h:selectOneMenu>-->
 
-			<!-- dummy drop down -->
-			<!-- change binding -->
-			<!-- and convert html to jsf tags -->
-			<select>
-				<ui:repeat value="#{catalogItemFormBean.items}" var="val">
-					<option value="#{val.name}">#{val.name}</option>
-				</ui:repeat>
-			</select>
+			<!-- dummy drop down lang etey -->
+			<!-- need 2 change bindings pa -->
+			<h:selectOneMenu value="#{catalogItemFormBean.item.typeOfAnimal}">
+				<f:selectItems value="#{catalogItemFormBean.items}" var="animal"
+							   itemLabel="#{animal.name}" itemValue="#{animal.itemId}" />
+			</h:selectOneMenu>
 
 			<h:commandButton class="uk-button uk-button-default uk-button-small" value="Submit" action="#{catalogItemFormBean.addItem()}"/>
 		</h:form>
