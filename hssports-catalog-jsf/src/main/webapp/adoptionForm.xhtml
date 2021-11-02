@@ -68,6 +68,7 @@
 			<!-- dummy drop down lang etey -->
 			<!-- need 2 change bindings pa -->
 			<h:selectOneMenu value="#{catalogItemFormBean.item.typeOfAnimal}">
+				<f:selectItem itemValue="#{null}" itemLabel="Name of Pet" noSelectionOption="true"/>
 				<f:selectItems value="#{catalogItemFormBean.items}" var="animal"
 							   itemLabel="#{animal.name}" itemValue="#{animal.itemId}" />
 			</h:selectOneMenu>
