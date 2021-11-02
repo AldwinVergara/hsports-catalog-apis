@@ -5,7 +5,7 @@ import java.util.Date;
 
 @Entity
 @Table(name="ADOPTER")
-public class Adopter {
+public class AdopterEntity {
 
     @Id
     @Column(name="ADOPTER_ID")
@@ -30,11 +30,11 @@ public class Adopter {
     @Column(name="AYWAN_DATE")
     private Date aywanDate;
 
-    public Adopter() {
+    public AdopterEntity() {
 
     }
 
-    public Adopter(long adopterId, String firstName, String lastName, long contactNumber, String email, String address, Date aywanDate) {
+    public AdopterEntity(long adopterId, String firstName, String lastName, long contactNumber, String email, String address, Date aywanDate) {
         super();
         this.adopterId = adopterId;
         this.firstName = firstName;
