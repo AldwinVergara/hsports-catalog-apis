@@ -9,7 +9,8 @@
 
 <ui:composition template="/template.xhtml">
 	<f:metadata>
-		<f:viewAction action="#{catalogItemFormBean.init}"></f:viewAction>
+		<f:viewAction action="#{adopterFormBean.init()}"></f:viewAction>
+		<f:viewAction action="#{catalogItemFormBean.init()}"></f:viewAction>
 	</f:metadata>
 	<ui:define name="pageHeader">
 		<h:link value="#{msg['form.pageTitle']}" outcome="form"/> |
@@ -26,37 +27,44 @@
 		<h:form id="item-form">
 
 			<div>
-				<h:inputText class="uk-input" type="text" a:placeholder="First Name" id="firstName" value="#{catalogItemFormBean.item.name}">
+				<h:inputText class="uk-input" type="text" a:placeholder="First Name" id="firstName" value="#{adopterFormBean.adopter.firstName}">
 					<f:validateRegex pattern="[A-Za-z0-9 ]+"></f:validateRegex>
 				</h:inputText>
 				<h:message for="firstName"/>
 			</div>
 
 			<div>
-				<h:inputText class="uk-input" type="text" a:placeholder="Last Name" id="lastName" value="#{catalogItemFormBean.item.breed}">
+				<h:inputText class="uk-input" type="text" a:placeholder="Last Name" id="lastName" value="#{adopterFormBean.adopter.lastName}">
 					<f:validateRegex pattern="[A-Za-z ]+"></f:validateRegex>
 				</h:inputText>
 				<h:message for="lastName"/>
 			</div>
 
 			<div>
-				<h:inputText class="uk-input" type="text" a:placeholder="Contact Number"  id="contactNum" value="#{catalogItemFormBean.item.color}">
-					<f:validateRegex pattern="[A-Za-z ]+"></f:validateRegex>
+				<h:inputText class="uk-input"
+							 id="contactNum"
+							 converter="javax.faces.Long"
+							 onkeypress="if(event.which &lt; 48 || event.which &gt; 57) return false;"
+							 a:maxlength="11"
+							 a:placeholder="Contact Number"
+							 type="number"
+							 value="#{adopterFormBean.adopter.contactNumber}">
+
 				</h:inputText>
 				<h:message for="contactNum"/>
 			</div>
 
 			<div>
-				<h:inputText class="uk-input" type="text" a:placeholder="Email"  id="email" value="#{catalogItemFormBean.item.color}">
-					<f:validateRegex pattern="[A-Za-z ]+"></f:validateRegex>
+				<h:inputText class="uk-input" type="text" a:placeholder="Email"  id="email" value="#{adopterFormBean.adopter.email}">
+					<f:validateRegex pattern="[A-Za-z@. ]+"></f:validateRegex>
 				</h:inputText>
 				<h:message for="email"/>
 			</div>
 			<div>
-				<h:inputTextarea class="uk-textarea" rows="5" a:placeholder="Address" value="#{catalogItemFormBean.item.behavior}"></h:inputTextarea>
+				<h:inputTextarea class="uk-textarea" rows="5" a:placeholder="Address" value="#{adopterFormBean.adopter.address}"></h:inputTextarea>
 			</div>
 			<div>
-				<h:inputText class="uk-input" type="text" a:placeholder="Date Today (dd-MM-yyyy)" id="todaysDate" value="#{catalogItemFormBean.item.availableDate}">
+				<h:inputText class="uk-input" type="text" a:placeholder="Date Today (dd-MM-yyyy)" id="todaysDate" value="#{adopterFormBean.adopter.aywanDate}">
 					<f:convertDateTime type="date" pattern="dd-MM-yyyy"/>
 				</h:inputText>
 				<h:message for="todaysDate"/>
@@ -65,15 +73,13 @@
 				<h:outputText value="Select Pets:" />
 			</div>
 
-			<!-- dummy drop down lang etey -->
-			<!-- need 2 change bindings pa -->
 			<h:selectOneMenu value="#{catalogItemFormBean.item.typeOfAnimal}">
 				<f:selectItem itemValue="#{null}" itemLabel="Name of Pet" noSelectionOption="true"/>
 				<f:selectItems value="#{catalogItemFormBean.items}" var="animal"
 							   itemLabel="#{animal.name}" itemValue="#{animal.itemId}" />
 			</h:selectOneMenu>
 
-			<h:commandButton class="uk-button uk-button-default uk-button-small" value="Submit" action="#{catalogItemFormBean.addItem()}"/>
+			<h:commandButton class="uk-button uk-button-default uk-button-small" value="Submit" action="#{adopterFormBean.addAdopter()}"/>
 		</h:form>
 	</ui:define>
 </ui:composition>
