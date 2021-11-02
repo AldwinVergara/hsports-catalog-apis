@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+<ui:composition template="/template.xhtml">
+    <f:metadata>
+        <f:viewAction action="#{adopterFormBean.init}"></f:viewAction>
+    </f:metadata>
+    <ui:define name="pageHeader">
+        <h:link value="#{msg['form.pageTitle']}" outcome="form"/> |
+        <h:link value="#{msg['list.pageTitle']}" outcome="list"/> |
+        <h:link value="#{msg['adoption.pageTitle']}" outcome="adoptionForm"/>
+    </ui:define>
+    <ui:define name="body">
+
+<!--        <h:form>-->
+<!--            <h:outputLabel value="Search by Name:" />-->
+<!--            <h:inputText id="searchInput" value="#{catalogItemFormBean.searchText}" />-->
+<!--            <h:commandButton action="#{catalogItemFormBean.searchByName}" value="Search">-->
+<!--                <f:ajax execute="searchInput" render="dataTable" />-->
+<!--            </h:commandButton>-->
+<!--        </h:form>-->
+
+<!--        <h:form>-->
+<!--            <h:outputLabel value="Sort by type: "/>-->
+<!--            <h:selectOneMenu id="sortInput" value="#{catalogItemFormBean.sortText}">-->
+<!--                <f:selectItem itemValue="Birds" itemLabel="Birds"/>-->
+<!--                <f:selectItem itemValue="Cats" itemLabel="Cats"/>-->
+<!--                <f:selectItem itemValue="Dogs" itemLabel="Dogs"/>-->
+<!--                <f:selectItem itemValue="Fish" itemLabel="Fish"/>-->
+<!--                <f:selectItem itemValue="Guinea pigs" itemLabel="Guinea Pigs"/>-->
+<!--                <f:selectItem itemValue="Rabbits" itemLabel="Rabbits"/>-->
+<!--            </h:selectOneMenu>-->
+<!--            <h:commandButton value="Sort" action="#{catalogItemFormBean.sortByType()}">-->
+<!--                <f:ajax execute="sortInput" render="dataTable"/>-->
+<!--            </h:commandButton>-->
+<!--        </h:form>-->
+
+        <h:dataTable class="uk-table uk-table-small uk-table-divider" id="dataTable" value="#{adopterFormBean.adopters}" var="adopter">
+            <h:column>
+                <f:facet name="header">First Name</f:facet>
+                <h:outputText value="#{adopter.firstName}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Last Name</f:facet>
+                <h:outputText value="#{adopter.lastName}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Contact</f:facet>
+                <h:outputText value="#{adopter.contactNumber}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Email</f:facet>
+                <h:outputText value="#{adopter.email}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Date Modified</f:facet>
+                <h:outputText value="#{adopter.aywanDate}">
+                    <f:convertDateTime type="date" dateStyle="medium"/>
+                </h:outputText>
+            </h:column>
+<!--            <h:column>-->
+<!--                <h:link value="Remove" outcome="confirm">-->
+<!--                    <f:param name="itemId" value="#{item.itemId}"/>-->
+<!--                </h:link>-->
+<!--            </h:column>-->
+<!--            <h:column>-->
+<!--                <h:link value="Edit" outcome="update">-->
+<!--                    <f:param name="itemId" value="#{item.itemId}"/>-->
+<!--                </h:link>-->
+<!--            </h:column>-->
+        </h:dataTable>
+    </ui:define>
+</ui:composition>
+</html>
