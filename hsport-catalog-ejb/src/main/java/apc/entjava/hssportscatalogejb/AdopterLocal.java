@@ -5,7 +5,7 @@ import java.util.List;
 
 @Local
 public interface AdopterLocal {
-    public List<AdopterEntity> getAdopter();
+    public List<AdopterEntity> getAdopters();
     public void addAdopter(AdopterEntity adopter);
     public void removeAdopter(AdopterEntity adopter);
     public AdopterEntity findAdopter(Long adopterId);

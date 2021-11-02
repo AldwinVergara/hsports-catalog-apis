@@ -19,7 +19,7 @@ public class Adopter implements AdopterLocal {
     }
 
     @Override
-    public List<AdopterEntity> getAdopter() {
+    public List<AdopterEntity> getAdopters() {
         return this.entityManager.createQuery("select p from AdopterEntity p", AdopterEntity.class).getResultList();
     }
 
