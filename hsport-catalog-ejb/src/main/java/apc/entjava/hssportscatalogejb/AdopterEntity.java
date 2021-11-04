@@ -30,6 +30,10 @@ public class AdopterEntity {
     @Column(name="AYWAN_DATE")
     private Date aywanDate;
 
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "ADOPTER_ID")
+    private CatalogItem catalogItem;
+
     public AdopterEntity() {
 
     }
@@ -99,6 +103,14 @@ public class AdopterEntity {
 
     public void setAywanDate(Date aywanDate) {
         this.aywanDate = aywanDate;
+    }
+
+    public CatalogItem getCatalogItem() {
+        return catalogItem;
+    }
+
+    public void setCatalogItem(CatalogItem catalogItem) {
+        this.catalogItem = catalogItem;
     }
 
     @Override
