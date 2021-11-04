@@ -12,4 +12,5 @@ public interface AdopterLocal {
     // public void updateAdopter(AdopterEntity adopter);
     public List<AdopterEntity> searchByFirstName(String firstName);
     public List<AdopterEntity> searchByLastName(String lastName);
+    public void saveAdopter(AdopterEntity adopter);
 }

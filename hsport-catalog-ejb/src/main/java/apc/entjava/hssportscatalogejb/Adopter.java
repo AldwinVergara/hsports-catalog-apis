@@ -54,5 +54,8 @@ public class Adopter implements AdopterLocal {
         return query.setParameter("lastName", "%" + lastName + "%").getResultList();
     }
 
-
+    @Override
+    public void saveAdopter(AdopterEntity adopter) {
+        this.entityManager.merge(adopter);
+    }
 }
