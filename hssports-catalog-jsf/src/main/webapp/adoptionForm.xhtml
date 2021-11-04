@@ -74,7 +74,7 @@
 				<h:outputText value="Select Pets:" />
 			</div>
 
-			<h:selectOneMenu value="#{catalogItemFormBean.item.typeOfAnimal}">
+			<h:selectOneMenu value="#{adopterFormBean.animalId}">
 				<f:selectItem itemValue="#{null}" itemLabel="Name of Pet" noSelectionOption="true"/>
 				<f:selectItems value="#{catalogItemFormBean.items}" var="animal"
 							   itemLabel="#{animal.name}" itemValue="#{animal.itemId}" />
