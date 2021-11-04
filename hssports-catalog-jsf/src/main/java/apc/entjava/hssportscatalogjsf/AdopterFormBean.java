@@ -2,6 +2,7 @@ package apc.entjava.hssportscatalogjsf;
 
 import apc.entjava.hssportscatalogejb.AdopterEntity;
 import apc.entjava.hssportscatalogejb.AdopterLocal;
+import apc.entjava.hssportscatalogejb.CatalogLocal;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -15,8 +16,14 @@ public class AdopterFormBean {
     @Inject
     private AdopterLocal adopterBean;
 
+    @Inject
+    private CatalogLocal catalogBean;
+
+    private long animalId;
+
     private AdopterEntity adopter = new AdopterEntity();
     private List<AdopterEntity> adopters = new ArrayList<>();
+
 
     public void init() {
        this.adopters = adopterBean.getAdopters();
@@ -28,6 +35,10 @@ public class AdopterFormBean {
                this.adopter.getAddress(), this.adopter.getAywanDate()
                )
        );
+
+       this.adopter.setCatalogItem(catalogBean.findItem(animalId));
+
+       this.adopterBean.saveAdopter(adopter);
 
        return "adoptersList?faces-redirect=true";
     }
@@ -56,4 +67,19 @@ public class AdopterFormBean {
         this.adopters = adopters;
     }
 
+    public CatalogLocal getCatalogBean() {
+        return catalogBean;
+    }
+
+    public void setCatalogBean(CatalogLocal catalogBean) {
+        this.catalogBean = catalogBean;
+    }
+
+    public long getAnimalId() {
+        return animalId;
+    }
+
+    public void setAnimalId(long animalId) {
+        this.animalId = animalId;
+    }
 }
