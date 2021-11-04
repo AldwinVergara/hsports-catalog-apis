@@ -34,6 +34,9 @@ public class CatalogItem {
 	@Column(name = "AVAILABLE_DATE")
 	private Date availableDate;
 
+	@OneToOne(mappedBy = "catalogItem")
+	private AdopterEntity adopterEntity;
+
 	public CatalogItem() {
 		
 	}
@@ -102,6 +105,14 @@ public class CatalogItem {
 	public Date getAvailableDate() {return availableDate;}
 
 	public void setAvailableDate(Date availableDate) {this.availableDate = availableDate;}
+
+	public AdopterEntity getAdopterEntity() {
+		return adopterEntity;
+	}
+
+	public void setAdopterEntity(AdopterEntity adopterEntity) {
+		this.adopterEntity = adopterEntity;
+	}
 
 	@Override
 	public String toString() {
