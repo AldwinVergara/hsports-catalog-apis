@@ -7,40 +7,40 @@
 <ui:composition template="/template.xhtml">
 
     <f:metadata>
-        <f:viewParam name="itemId" value="#{catalogItemDeleteBean.itemId}"></f:viewParam>
-        <f:event type="preRenderView" listener="#{catalogItemDeleteBean.fetchItem()}"/>
+        <f:viewParam name="petId" value="#{petDeleteBean.petId}"></f:viewParam>
+        <f:event type="preRenderView" listener="#{petDeleteBean.fetchPet()}"/>
     </f:metadata>
 
     <ui:define name="body">
         <h:form>
-            <h3>Update an Item:</h3>
+            <h3>Update a Pet:</h3>
             <div>
                 <h:outputLabel value="Type of Animal:"></h:outputLabel>
-                <h:inputText value="#{catalogItemDeleteBean.item.typeOfAnimal}" />
+                <h:inputText value="#{petDeleteBean.pet.typeOfAnimal}" />
             </div>
             <div>
                 <h:outputLabel value="Name of Pet:"></h:outputLabel>
-                <h:inputText value="#{catalogItemDeleteBean.item.name}" />
+                <h:inputText value="#{petDeleteBean.pet.name}" />
             </div>
             <div>
                 <h:outputLabel value="Breed:"></h:outputLabel>
-                <h:inputText value="#{catalogItemDeleteBean.item.breed}" />
+                <h:inputText value="#{petDeleteBean.pet.breed}" />
             </div>
             <div>
                 <h:outputLabel value="Color:"></h:outputLabel>
-                <h:inputText value="#{catalogItemDeleteBean.item.color}" />
+                <h:inputText value="#{petDeleteBean.pet.color}" />
             </div>
             <div>
                 <h:outputLabel value="Behavior of Pet:"></h:outputLabel>
-                <h:inputText value="#{catalogItemDeleteBean.item.behavior}" />
+                <h:inputText value="#{petDeleteBean.pet.behavior}" />
             </div>
             <div>
                 <h:outputLabel value="Date Modified:"></h:outputLabel>
-                <h:inputText value="#{catalogItemDeleteBean.item.availableDate}">
+                <h:inputText value="#{petDeleteBean.pet.availableDate}">
                     <f:convertDateTime type="date" pattern="dd-MM-yyyy" />
                 </h:inputText>
             </div>
-            <h:commandButton action="#{catalogItemDeleteBean.updateItem}" value="Submit" />
+            <h:commandButton action="#{petDeleteBean.updatePet}" value="Submit" />
            <h:commandButton action="list?faces-redirect=true" value="Cancel" />
         </h:form>
     </ui:define>

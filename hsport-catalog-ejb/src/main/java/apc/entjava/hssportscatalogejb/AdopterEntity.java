@@ -32,7 +32,7 @@ public class AdopterEntity {
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "ADOPTER_ID")
-    private CatalogItem catalogItem;
+    private PetEntity petEntity;
 
     public AdopterEntity() {
 
@@ -105,12 +105,12 @@ public class AdopterEntity {
         this.aywanDate = aywanDate;
     }
 
-    public CatalogItem getCatalogItem() {
-        return catalogItem;
+    public PetEntity setPetEntity() {
+        return petEntity;
     }
 
-    public void setCatalogItem(CatalogItem catalogItem) {
-        this.catalogItem = catalogItem;
+    public void setPetEntity(PetEntity petEntity) {
+        this.petEntity = petEntity;
     }
 
     @Override

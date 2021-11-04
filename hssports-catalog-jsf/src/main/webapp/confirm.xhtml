@@ -7,8 +7,8 @@
 <ui:composition template="/template.xhtml">
 	
 	<f:metadata>
-		<f:viewParam name="itemId" value="#{catalogItemDeleteBean.itemId}"></f:viewParam>
-		<f:event type="preRenderView" listener="#{catalogItemDeleteBean.fetchItem()}"/>
+		<f:viewParam name="petId" value="#{petDeleteBean.petId}"></f:viewParam>
+		<f:event type="preRenderView" listener="#{petDeleteBean.fetchPet()}"/>
 	</f:metadata>
 	
 	<ui:define name="body">
@@ -16,31 +16,31 @@
 			<h3>Please confirm that you would like to delete the following:</h3>
 			<div>
 				<h:outputLabel value="Type of Animal:"></h:outputLabel>
-				<h:outputLabel value="#{catalogItemDeleteBean.item.typeOfAnimal}" />
+				<h:outputLabel value="#{petDeleteBean.pet.typeOfAnimal}" />
 			</div>
 			<div>
 				<h:outputLabel value="Name:"></h:outputLabel>
-				<h:outputLabel value="#{catalogItemDeleteBean.item.name}" />
+				<h:outputLabel value="#{petDeleteBean.pet.name}" />
 			</div>
 			<div>
 				<h:outputLabel value="Breed:"></h:outputLabel>
-				<h:outputLabel value="#{catalogItemDeleteBean.item.breed}" />
+				<h:outputLabel value="#{petDeleteBean.pet.breed}" />
 			</div>
 			<div>
 				<h:outputLabel value="Color:"></h:outputLabel>
-				<h:outputLabel value="#{catalogItemDeleteBean.item.color}" />
+				<h:outputLabel value="#{petDeleteBean.pet.color}" />
 			</div>
 			<div>
 				<h:outputLabel value="Behavior:"></h:outputLabel>
-				<h:outputLabel value="#{catalogItemDeleteBean.item.behavior}" />
+				<h:outputLabel value="#{petDeleteBean.pet.behavior}" />
 			</div>
 			<div>
 				<h:outputLabel value="Date Modified:"></h:outputLabel>
-				<h:outputLabel value="#{catalogItemDeleteBean.item.availableDate}">
+				<h:outputLabel value="#{petDeleteBean.pet.availableDate}">
 					<f:convertDateTime type="date" pattern="dd-MM-yyyy" />
 				</h:outputLabel>
 			</div>
-			<h:commandButton action="#{catalogItemDeleteBean.removeItem()}" value="Submit" />
+			<h:commandButton action="#{petDeleteBean.removePet()}" value="Submit" />
 			<h:commandButton action="list?faces-redirect=true" value="Cancel" />
 		</h:form>
 	</ui:define>

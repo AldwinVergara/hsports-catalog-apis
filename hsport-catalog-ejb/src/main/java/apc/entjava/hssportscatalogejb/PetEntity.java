@@ -5,12 +5,12 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name="CATALOG_ITEM")
-public class CatalogItem {
+@Table(name="PET")
+public class PetEntity {
 	@Id
-	@Column(name="CATALOG_ITEM_ID")
+	@Column(name="PET_ID")
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long itemId;
+	private Long petId;
 
 	@Column(name="TYPE_OF_ANIMAL")
 	private String typeOfAnimal;
@@ -34,31 +34,29 @@ public class CatalogItem {
 	@Column(name = "AVAILABLE_DATE")
 	private Date availableDate;
 
-	@OneToOne(mappedBy = "catalogItem")
+	@OneToOne(mappedBy = "petEntity")
 	private AdopterEntity adopterEntity;
 
-	public CatalogItem() {
-		
+	public PetEntity() {
+
 	}
-	
-	public CatalogItem(String typeOfAnimal, String name, String breed, String color, String behavior, Date availableDate) {
+
+	public PetEntity(String typeOfAnimal, String name, String breed, String color, String behavior, Date availableDate) {
 		super();
 		this.typeOfAnimal = typeOfAnimal;
 		this.name = name;
 		this.breed = breed;
 		this.color = color;
 		this.behavior = behavior;
-		//this.manufacturer = manufacturer;
-		//this.description = description;
 		this.availableDate = availableDate;
 	}
 
-	public Long getItemId() {
-		return itemId;
+	public Long getPetId() {
+		return petId;
 	}
 
-	public void setItemId(Long itemId) {
-		this.itemId = itemId;
+	public void setPetId(Long petId) {
+		this.petId = petId;
 	}
 
 	public String getTypeOfAnimal() {return typeOfAnimal;}
@@ -81,23 +79,6 @@ public class CatalogItem {
 
 	public void setColor(String color) {this.color = color;}
 
-	/*public String getManufacturer() {
-            return manufacturer;
-        }
-
-        public void setManufacturer(String manufacturer) {
-            this.manufacturer = manufacturer;
-        }
-
-        public String getDescription() {
-            return description;
-        }
-
-        public void setDescription(String description) {
-            this.description = description;
-        }
-        */
-
 	public String getBehavior() {return behavior;}
 
 	public void setBehavior(String behavior) {this.behavior = behavior;}
@@ -116,8 +97,22 @@ public class CatalogItem {
 
 	@Override
 	public String toString() {
-		return "CatalogItem [itemId=" + itemId + ", typeOfAnimal=" + typeOfAnimal + ", name=" + name + ", breed=" + breed + ", color=" + color + ", behavior="
-				+ behavior + ", availableDate=" + availableDate + "]";
+		return "PetEntity{" +
+				"petId=" + petId +
+				", typeOfAnimal='" + typeOfAnimal + '\'' +
+				", name='" + name + '\'' +
+				", breed='" + breed + '\'' +
+				", color='" + color + '\'' +
+				", behavior='" + behavior + '\'' +
+				", availableDate=" + availableDate +
+				", adopterEntity=" + adopterEntity +
+				'}';
 	}
+	/*
+	@Override
+	public String toString() {
+		return "PetEntity [petId=" + petId + ", typeOfAnimal=" + typeOfAnimal + ", name=" + name + ", breed=" + breed + ", color=" + color + ", behavior="
+				+ behavior + ", availableDate=" + availableDate + "]";
+	}*/
 
 }
