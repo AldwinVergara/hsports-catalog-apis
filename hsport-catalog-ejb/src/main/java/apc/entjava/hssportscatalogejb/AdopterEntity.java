@@ -33,7 +33,7 @@ public class AdopterEntity {
     private Date aywanDate;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "ADOPTER_ID")
+    @JoinColumn(name = "PET_ID")
     private PetEntity petEntity;
 
     public AdopterEntity() {
