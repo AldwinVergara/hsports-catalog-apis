@@ -29,6 +29,7 @@ public class AdopterEntity {
 
     @Column(name="AYWAN_DATE")
     private Date aywanDate;
+    
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "ADOPTER_ID")
@@ -105,7 +106,7 @@ public class AdopterEntity {
         this.aywanDate = aywanDate;
     }
 
-    public PetEntity setPetEntity() {
+    public PetEntity getPetEntity() {
         return petEntity;
     }
 

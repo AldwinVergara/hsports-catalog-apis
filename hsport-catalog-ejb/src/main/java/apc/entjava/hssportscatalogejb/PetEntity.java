@@ -108,6 +108,7 @@ public class PetEntity {
 				", adopterEntity=" + adopterEntity +
 				'}';
 	}
+
 	/*
 	@Override
 	public String toString() {
