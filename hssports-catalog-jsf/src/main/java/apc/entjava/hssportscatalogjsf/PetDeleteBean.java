@@ -1,6 +1,6 @@
 package apc.entjava.hssportscatalogjsf;
 
-import apc.entjava.hssportscatalogejb.CatalogLocal;
+
 import apc.entjava.hssportscatalogejb.PetEntity;
 import apc.entjava.hssportscatalogejb.PetLocal;
 
