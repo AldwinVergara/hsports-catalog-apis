@@ -13,11 +13,13 @@
 		<f:viewAction action="#{petFormBean.init()}"></f:viewAction>
 	</f:metadata>
 	<ui:define name="pageHeader">
+		<h:link value="Home" outcome="index"/> |
 		<h:link value="#{msg['form.pageTitle']}" outcome="form"/> |
 		<h:link value="#{msg['list.pageTitle']}" outcome="list"/> |
 		<h:link value="#{msg['adoption.pageTitle']}" outcome="adoptionForm"/> |
 		<h:link value="#{msg['adoption_list.pageTitle']}" outcome="adoptersList"/>
 	</ui:define>
+
 	<style>
 		.uk-input,.uk-select,.uk-textarea{
 			margin: 5px!important;
@@ -25,6 +27,7 @@
 	</style>
 	<ui:define name="body">
 		<h:outputScript library="js" name="shake.js"></h:outputScript>
+		<h1 style="margin-bottom: 0px" class="uk-text-large uk-heading-line uk-text-center"><span>Adoption Form</span></h1>
 		<h:form id="item-form">
 
 			<div>
