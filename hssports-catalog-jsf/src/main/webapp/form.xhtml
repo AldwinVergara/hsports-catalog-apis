@@ -9,6 +9,7 @@
 
 <ui:composition template="/template.xhtml">
 	<ui:define name="pageHeader">
+		<h:link value="Home" outcome="index"/> |
 		<h:link value="#{msg['form.pageTitle']}" outcome="form"/> |
 		<h:link value="#{msg['list.pageTitle']}" outcome="list"/> |
 		<h:link value="#{msg['adoption.pageTitle']}" outcome="adoptionForm"/> |
@@ -21,6 +22,7 @@
 	</style>
 	<ui:define name="body">
 		<h:outputScript library="js" name="shake.js"></h:outputScript>
+		<h1 style="margin-bottom: 0px" class="uk-text-large uk-heading-line uk-text-center"><span>Rehoming Form</span></h1>
 		<h:form id="item-form">
 			<div>
 				 <h:selectOneMenu class="uk-select" id="sortInput" value="#{petFormBean.pet.typeOfAnimal}">
