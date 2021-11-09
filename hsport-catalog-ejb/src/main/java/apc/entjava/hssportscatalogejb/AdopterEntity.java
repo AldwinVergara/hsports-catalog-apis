@@ -1,7 +1,9 @@
 package apc.entjava.hssportscatalogejb;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+
 
 @Entity
 @Table(name="ADOPTER")
@@ -29,7 +31,6 @@ public class AdopterEntity {
 
     @Column(name="AYWAN_DATE")
     private Date aywanDate;
-    
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "ADOPTER_ID")

@@ -18,16 +18,12 @@ public class PetEntity {
 	@Column(name="NAME")
 	private String name;
 
-	//@Column(name="MANUFACTURER")
-	//private String manufacturer;
 	@Column(name="BREED")
 	private String breed;
 
 	@Column(name="COLOR")
 	private String color;
 
-	//@Column(name = "DESCRIPTION")
-	//private String description;
 	@Column(name = "BEHAVIOR")
 	private String behavior;
 
@@ -108,7 +104,6 @@ public class PetEntity {
 				", adopterEntity=" + adopterEntity +
 				'}';
 	}
-
 	/*
 	@Override
 	public String toString() {

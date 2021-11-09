@@ -13,7 +13,7 @@ public class Adopter implements AdopterLocal {
 
     @PersistenceContext
     private EntityManager entityManager;
-
+    
     public Adopter() {
 
     }
