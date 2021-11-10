@@ -14,8 +14,6 @@
 	</f:metadata>
 	<ui:define name="pageHeader">
 		<h:link value="Home" outcome="index"/> |
-		<h:link value="#{msg['form.pageTitle']}" outcome="form"/> |
-		<h:link value="#{msg['list.pageTitle']}" outcome="list"/> |
 		<h:link value="#{msg['adoption.pageTitle']}" outcome="adoptionForm"/> |
 		<h:link value="#{msg['adoption_list.pageTitle']}" outcome="adoptersList"/>
 	</ui:define>
@@ -77,11 +75,21 @@
 				<h:outputText value="Select Pets:" />
 			</div>
 
-			<h:selectOneMenu value="#{adopterFormBean.animalId}">
-				<f:selectItem itemValue="#{null}" itemLabel="Name of Pet" noSelectionOption="true"/>
-				<f:selectItems value="#{petFormBean.pets}" var="animal"
-							   itemLabel="#{animal.name} - #{animal.typeOfAnimal}" itemValue="#{animal.petId}" />
-			</h:selectOneMenu>
+				 <!-- NEED TO CHANGE THIS -->
+				 <h:selectOneMenu id="something" value="#{adopterFormBean.animalId}" converter="javax.faces.Long">
+					  <f:selectItem itemValue="#{null}" itemLabel="Name of Pet" noSelectionOption="true"/>
+					  <f:selectItems value="#{petFormBean.pets}" var="animal"
+								 itemLabel="#{animal.name}" itemValue="#{animal.petId}"/>
+				 </h:selectOneMenu>
+				 <h:message for="something" />
+			</div>
+
+			<!-- NEED TO CHANGE THIS -->
+<!--			<h:selectOneMenu value="#{adopterFormBean.animalId}">-->
+<!--				<f:selectItem itemLabel="Chowder" itemValue="1"/>-->
+<!--			</h:selectOneMenu>-->
+
+
 
 			<h:commandButton class="uk-button uk-button-default uk-button-small" value="Submit" action="#{adopterFormBean.addAdopter()}"/>
 		</h:form>
