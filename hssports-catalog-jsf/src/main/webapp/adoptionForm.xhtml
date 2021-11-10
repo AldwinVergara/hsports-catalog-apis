@@ -77,10 +77,9 @@
 				<h:outputText value="Select Pets:" />
 			</div>
 
+			<!-- NEED TO CHANGE THIS -->
 			<h:selectOneMenu value="#{adopterFormBean.animalId}">
-				<f:selectItem itemValue="#{null}" itemLabel="Name of Pet" noSelectionOption="true"/>
-				<f:selectItems value="#{catalogItemFormBean.items}" var="animal"
-							   itemLabel="#{animal.name}" itemValue="#{animal.itemId}" />
+				<f:selectItem itemLabel="Chowder" itemValue="1"/>
 			</h:selectOneMenu>
 
 			<h:commandButton class="uk-button uk-button-default uk-button-small" value="Submit" action="#{adopterFormBean.addAdopter()}"/>
