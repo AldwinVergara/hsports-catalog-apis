@@ -3,6 +3,7 @@ package apc.entjava.hssportscatalogjsf;
 import apc.entjava.hssportscatalogejb.PetEntity;
 import apc.entjava.hssportscatalogejb.PetLocal;
 
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -40,6 +41,7 @@ public class PetFormBean implements Serializable {
 		return "list?faces-redirect=true";
 	}
 
+	@PostConstruct
 	public void init() {
 		this.pets = this.petBean.getPets();
 	}
