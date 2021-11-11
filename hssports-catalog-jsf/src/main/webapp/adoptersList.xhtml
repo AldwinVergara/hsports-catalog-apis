@@ -38,21 +38,23 @@
                 <h:outputText value="#{adopter.address}" />
             </h:column>
             <h:column>
-                <f:facet name="header">Date Modified</f:facet>
+                <f:facet name="header">Date Adopted</f:facet>
                 <h:outputText value="#{adopter.aywanDate}">
                     <f:convertDateTime type="date" dateStyle="medium"/>
                 </h:outputText>
             </h:column>
-<!--            <h:column>-->
-<!--                <h:link value="Remove" outcome="confirm">-->
-<!--                    <f:param name="itemId" value="#{item.itemId}"/>-->
-<!--                </h:link>-->
-<!--            </h:column>-->
-<!--            <h:column>-->
-<!--                <h:link value="Edit" outcome="update">-->
-<!--                    <f:param name="itemId" value="#{item.itemId}"/>-->
-<!--                </h:link>-->
-<!--            </h:column>-->
+            <h:column>
+                <f:facet name="header">Name of Pet</f:facet>
+                <h:outputText value="#{adopter.petEntity.name}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">Type of Animal</f:facet>
+                <h:outputText value="#{adopter.petEntity.typeOfAnimal}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">Breed</f:facet>
+                <h:outputText value="#{adopter.petEntity.breed}"/>
+            </h:column>
         </h:dataTable>
     </ui:define>
 </ui:composition>
