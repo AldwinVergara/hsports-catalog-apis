@@ -32,13 +32,14 @@ public class AdopterFormBean {
     public String addAdopter() {
        this.adopterBean.addAdopter(new AdopterEntity(this.adopter.getAdopterId(), this.adopter.getFirstName(),
                this.adopter.getLastName(), this.adopter.getContactNumber(), this.adopter.getEmail(),
-               this.adopter.getAddress(), this.adopter.getAywanDate()
+               this.adopter.getAddress(), this.adopter.getAywanDate(), petBean.findPet(animalId)
                )
        );
 
-       this.adopter.setPetEntity(petBean.findPet(animalId));
-       this.pet.setAdopterEntity(adopter);
-       this.adopterBean.saveAdopter(adopter);
+//       this.adopter.setPetEntity(petBean.findPet(animalId));
+//       this.pet.setAdopterEntity(adopter);
+//
+//       this.adopterBean.saveAdopter(adopter);
 
        return "adoptersList?faces-redirect=true";
     }
