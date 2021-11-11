@@ -40,7 +40,7 @@ public class AdopterFormBean {
        this.pet.setAdopterEntity(adopter);
        this.adopterBean.saveAdopter(adopter);
 
-       return "dummy?faces-redirect=true";
+       return "adoptersList?faces-redirect=true";
     }
 
     public AdopterLocal getAdopterBean() {
