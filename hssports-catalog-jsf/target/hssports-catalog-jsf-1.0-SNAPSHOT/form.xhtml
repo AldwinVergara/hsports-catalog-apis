@@ -11,9 +11,7 @@
 	<ui:define name="pageHeader">
 		<h:link value="Home" outcome="index"/> |
 		<h:link value="#{msg['form.pageTitle']}" outcome="form"/> |
-		<h:link value="#{msg['list.pageTitle']}" outcome="list"/> |
-		<h:link value="#{msg['adoption.pageTitle']}" outcome="adoptionForm"/> |
-		<h:link value="#{msg['adoption_list.pageTitle']}" outcome="adoptersList"/>
+		<h:link value="#{msg['list.pageTitle']}" outcome="list"/>
 	</ui:define>
 	<style>
 		.uk-input,.uk-select,.uk-textarea{
@@ -56,15 +54,18 @@
 				</h:inputText>
 				<h:message for="color"/>
 			</div>
+
 			<div>
 				<h:inputText class="uk-input" type="text" a:placeholder="Date Today (dd-MM-yyyy)" id="todaysDate" value="#{petFormBean.pet.availableDate}">
 					<f:convertDateTime type="date" pattern="dd-MM-yyyy"/>
 				</h:inputText>
 				<h:message for="todaysDate"/>
 			</div>
+
 			<div>
 				<h:inputTextarea class="uk-textarea" rows="5" a:placeholder="Behavior of Pet" value="#{petFormBean.pet.behavior}"></h:inputTextarea>
 			</div>
+
 			<h:commandButton class="uk-button uk-button-default uk-button-small" value="Submit" action="#{petFormBean.addPet()}"/>
 		</h:form>
 	</ui:define>
