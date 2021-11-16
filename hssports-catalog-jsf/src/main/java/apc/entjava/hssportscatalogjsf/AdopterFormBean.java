@@ -36,11 +36,6 @@ public class AdopterFormBean {
                )
        );
 
-//       this.adopter.setPetEntity(petBean.findPet(animalId));
-//       this.pet.setAdopterEntity(adopter);
-//
-//       this.adopterBean.saveAdopter(adopter);
-
        return "adoptersList?faces-redirect=true";
     }
 

@@ -6,27 +6,14 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 
-/**
- * Session Bean implementation class Catalog
- */
 @Singleton
 @LocalBean
 public class Pet implements PetLocal {
-
-	/* private List<CatalogItem> items = new ArrayList<>();*/
 	@PersistenceContext
 	private EntityManager entityManager;
 
-	/**
-     * Default constructor.
-     */
     public Pet() {
     }
-
-//	public List<PetEntity> getFreePets(){
-//		return this.entityManager.createQuery("select c from PetEntity c WHERE c.adopted = false",
-//				PetEntity.class).getResultList();
-//	}
 
 	@Override
 	public List<PetEntity> getPets() {

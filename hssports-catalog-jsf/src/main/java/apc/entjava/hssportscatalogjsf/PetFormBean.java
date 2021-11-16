@@ -28,8 +28,6 @@ public class PetFormBean implements Serializable {
 
 	private String sortText;
 
-//	private List<PetEntity> freePets = new ArrayList<>();
-
 	public void searchByName() {
 		this.pets = this.petBean.searchByName(this.searchText);
 	}
@@ -47,7 +45,6 @@ public class PetFormBean implements Serializable {
 	@PostConstruct
 	public void init() {
 		this.pets = this.petBean.getPets();
-//		this.freePets = this.petBean.getFreePets();
 	}
 
 	public PetLocal getPetBean() {
@@ -89,12 +86,4 @@ public class PetFormBean implements Serializable {
 	public void setPets(List<PetEntity> pets) {
 		this.pets = pets;
 	}
-
-//	public List<PetEntity> getFreePets() {
-//		return freePets;
-//	}
-//
-//	public void setFreePets(List<PetEntity> freePets) {
-//		this.freePets = freePets;
-//	}
 }

@@ -10,7 +10,6 @@ import java.util.List;
 @Singleton
 @LocalBean
 public class Adopter implements AdopterLocal {
-
     @PersistenceContext
     private EntityManager entityManager;
     
@@ -58,4 +57,6 @@ public class Adopter implements AdopterLocal {
     public void saveAdopter(AdopterEntity adopter) {
         this.entityManager.merge(adopter);
     }
+
+
 }
