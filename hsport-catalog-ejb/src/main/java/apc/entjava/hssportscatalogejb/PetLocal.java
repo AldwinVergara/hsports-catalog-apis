@@ -5,7 +5,7 @@ import java.util.List;
 
 @Local
 public interface PetLocal {
-	public List<PetEntity> getFreePets();
+//	public List<PetEntity> getFreePets();
 
 	public List<PetEntity> getPets();
 	

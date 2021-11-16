@@ -23,10 +23,10 @@ public class Pet implements PetLocal {
     public Pet() {
     }
 
-	public List<PetEntity> getFreePets(){
-		return this.entityManager.createQuery("select c from PetEntity c WHERE c.adopted = false",
-				PetEntity.class).getResultList();
-	}
+//	public List<PetEntity> getFreePets(){
+//		return this.entityManager.createQuery("select c from PetEntity c WHERE c.adopted = false",
+//				PetEntity.class).getResultList();
+//	}
 
 	@Override
 	public List<PetEntity> getPets() {
