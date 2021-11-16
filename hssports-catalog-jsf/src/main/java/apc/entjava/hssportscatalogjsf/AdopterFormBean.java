@@ -52,22 +52,6 @@ public class AdopterFormBean {
         this.adopterBean = adopterBean;
     }
 
-    public AdopterEntity getAdopter() {
-        return adopter;
-    }
-
-    public void setAdopter(AdopterEntity adopter) {
-        this.adopter = adopter;
-    }
-
-    public List<AdopterEntity> getAdopters() {
-        return adopters;
-    }
-
-    public void setAdopters(List<AdopterEntity> adopters) {
-        this.adopters = adopters;
-    }
-
     public PetLocal getPetBean() {
         return petBean;
     }
@@ -82,5 +66,29 @@ public class AdopterFormBean {
 
     public void setAnimalId(long animalId) {
         this.animalId = animalId;
+    }
+
+    public AdopterEntity getAdopter() {
+        return adopter;
+    }
+
+    public void setAdopter(AdopterEntity adopter) {
+        this.adopter = adopter;
+    }
+
+    public PetEntity getPet() {
+        return pet;
+    }
+
+    public void setPet(PetEntity pet) {
+        this.pet = pet;
+    }
+
+    public List<AdopterEntity> getAdopters() {
+        return adopters;
+    }
+
+    public void setAdopters(List<AdopterEntity> adopters) {
+        this.adopters = adopters;
     }
 }
