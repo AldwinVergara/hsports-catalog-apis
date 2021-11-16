@@ -11,7 +11,8 @@
     <ui:define name="pageHeader">
         <h:link value="Home" outcome="index"/> |
         <h:link value="#{msg['adoption.pageTitle']}" outcome="adoptionForm"/> |
-        <h:link value="#{msg['adoption_list.pageTitle']}" outcome="adoptersList"/>
+        <h:link value="#{msg['adoption_list.pageTitle']}" outcome="adoptersList"/> |
+        <h:link value="#{msg['list.pageTitle']}" outcome="list"/>
     </ui:define>
     <ui:define name="body">
         <h:dataTable styleClass="fixed-size" class="wrap uk-table uk-table-small uk-table-divider" id="dataTable" value="#{adopterFormBean.adopters}" var="adopter">
@@ -49,10 +50,10 @@
                 <f:facet name="header">Type of Animal</f:facet>
                 <h:outputText value="#{adopter.petEntity.typeOfAnimal}"/>
             </h:column>
-            <h:column>
-                <f:facet name="header">Breed</f:facet>
-                <h:outputText value="#{adopter.petEntity.breed}"/>
-            </h:column>
+<!--            <h:column>-->
+<!--                <f:facet name="header">Breed</f:facet>-->
+<!--                <h:outputText value="#{adopter.petEntity.breed}"/>-->
+<!--            </h:column>-->
         </h:dataTable>
     </ui:define>
 </ui:composition>
