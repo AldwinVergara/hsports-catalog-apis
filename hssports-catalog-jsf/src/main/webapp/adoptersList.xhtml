@@ -4,7 +4,7 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
 
-<ui:composition template="/template.xhtml">
+<ui:composition template="/templateAdopter.xhtml">
     <f:metadata>
         <f:viewAction action="#{adopterFormBean.init}"></f:viewAction>
     </f:metadata>
@@ -14,7 +14,7 @@
         <h:link value="#{msg['adoption_list.pageTitle']}" outcome="adoptersList"/>
     </ui:define>
     <ui:define name="body">
-        <h:dataTable class="uk-table uk-table-small uk-table-divider" id="dataTable" value="#{adopterFormBean.adopters}" var="adopter">
+        <h:dataTable styleClass="fixed-size" class="wrap uk-table uk-table-small uk-table-divider" id="dataTable" value="#{adopterFormBean.adopters}" var="adopter">
             <h:column>
                 <f:facet name="header">First Name</f:facet>
                 <h:outputText value="#{adopter.firstName}" />
@@ -27,10 +27,10 @@
                 <f:facet name="header">Contact</f:facet>
                 <h:outputText value="#{adopter.contactNumber}" />
             </h:column>
-            <h:column>
-                <f:facet name="header">Email</f:facet>
-                <h:outputText value="#{adopter.email}" />
-            </h:column>
+<!--            <h:column>-->
+<!--                <f:facet name="header">Email</f:facet>-->
+<!--                <h:outputText value="#{adopter.email}" />-->
+<!--            </h:column>-->
             <h:column>
                 <f:facet name="header">Address</f:facet>
                 <h:outputText value="#{adopter.address}" />

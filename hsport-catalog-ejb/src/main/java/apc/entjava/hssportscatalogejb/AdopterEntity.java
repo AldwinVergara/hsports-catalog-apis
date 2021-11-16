@@ -32,7 +32,7 @@ public class AdopterEntity {
     @Column(name="AYWAN_DATE")
     private Date aywanDate;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     @JoinColumn(name = "PET_ID")
     private PetEntity petEntity;
 
@@ -49,6 +49,17 @@ public class AdopterEntity {
         this.email = email;
         this.address = address;
         this.aywanDate = aywanDate;
+    }
+
+    public AdopterEntity(long adopterId, String firstName, String lastName, long contactNumber, String email, String address, Date aywanDate, PetEntity petEntity) {
+        this.adopterId = adopterId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.contactNumber = contactNumber;
+        this.email = email;
+        this.address = address;
+        this.aywanDate = aywanDate;
+        this.petEntity = petEntity;
     }
 
     public long getAdopterId() {

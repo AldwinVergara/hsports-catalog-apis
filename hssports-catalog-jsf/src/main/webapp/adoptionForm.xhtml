@@ -7,7 +7,7 @@
 
 
 
-<ui:composition template="/template.xhtml">
+<ui:composition template="/templateAdopter.xhtml">
 	<f:metadata>
 		<f:viewAction action="#{adopterFormBean.init()}"></f:viewAction>
 		<f:viewAction action="#{petFormBean.init()}"></f:viewAction>
@@ -56,12 +56,12 @@
 				<h:message for="contactNum"/>
 			</div>
 
-			<div>
-				<h:inputText class="uk-input" type="text" a:placeholder="Email"  id="email" value="#{adopterFormBean.adopter.email}">
-					<f:validateRegex pattern="[A-Za-z@. ]+"></f:validateRegex>
-				</h:inputText>
-				<h:message for="email"/>
-			</div>
+<!--			<div>-->
+<!--				<h:inputText class="uk-input" type="text" a:placeholder="Email"  id="email" value="#{adopterFormBean.adopter.email}">-->
+<!--					<f:validateRegex pattern="[A-Za-z@. ]+"></f:validateRegex>-->
+<!--				</h:inputText>-->
+<!--				<h:message for="email"/>-->
+<!--			</div>-->
 			<div>
 				<h:inputTextarea class="uk-textarea" rows="5" a:placeholder="Address" value="#{adopterFormBean.adopter.address}"></h:inputTextarea>
 			</div>
@@ -76,7 +76,7 @@
 				 <h:selectOneMenu id="something" value="#{adopterFormBean.animalId}" converter="javax.faces.Long">
 					  <f:selectItem itemValue="#{null}" itemLabel="Name of Pet" noSelectionOption="true"/>
 					  <f:selectItems value="#{petFormBean.pets}" var="animal"
-								 itemLabel="#{animal.name}" itemValue="#{animal.petId}"/>
+								 itemLabel="#{animal.name} - #{animal.typeOfAnimal} - #{animal.breed}" itemValue="#{animal.petId}"/>
 				 </h:selectOneMenu>
 				 <h:message for="something" />
 			</div>
