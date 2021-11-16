@@ -8,6 +8,8 @@
 
 
 <ui:composition template="/templateAdopter.xhtml">
+	<ui:define name="pageTitle">#{msg['adoption.pageTitle']}</ui:define>
+
 	<f:metadata>
 		<f:viewAction action="#{adopterFormBean.init()}"></f:viewAction>
 		<f:viewAction action="#{petFormBean.init()}"></f:viewAction>

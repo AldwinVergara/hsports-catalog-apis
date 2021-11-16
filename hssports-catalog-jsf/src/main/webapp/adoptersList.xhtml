@@ -5,6 +5,8 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html">
 
 <ui:composition template="/templateAdopter.xhtml">
+    <ui:define name="pageTitle">#{msg['adoption_list.pageTitle']}</ui:define>
+
     <f:metadata>
         <f:viewAction action="#{adopterFormBean.init}"></f:viewAction>
     </f:metadata>
