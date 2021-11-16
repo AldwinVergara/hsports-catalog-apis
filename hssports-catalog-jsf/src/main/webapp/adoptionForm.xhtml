@@ -16,7 +16,7 @@
 	</f:metadata>
 	<ui:define name="pageHeader">
 		<h:link value="Home" outcome="index"/> |
-		<h:link value="#{msg['adoption.pageTitle']}" outcome="adoptionForm"/> |
+		<strong><h:link value="#{msg['adoption.pageTitle']}" outcome="adoptionForm"/></strong> |
 		<h:link value="#{msg['adoption_list.pageTitle']}" outcome="adoptersList"/>
 	</ui:define>
 
@@ -28,8 +28,8 @@
 	<ui:define name="body">
 		<h:outputScript library="js" name="shake.js"></h:outputScript>
 		<h1 style="margin-bottom: 0px" class="uk-text-large uk-heading-line uk-text-center"><span>Adoption Form</span></h1>
-		<h:form id="item-form">
 
+		<h:form id="item-form">
 			<div>
 				<h:inputText class="uk-input" type="text" a:placeholder="First Name" id="firstName" value="#{adopterFormBean.adopter.firstName}">
 					<f:validateRegex pattern="[A-Za-z0-9 ]+"></f:validateRegex>
@@ -58,21 +58,17 @@
 				<h:message for="contactNum"/>
 			</div>
 
-<!--			<div>-->
-<!--				<h:inputText class="uk-input" type="text" a:placeholder="Email"  id="email" value="#{adopterFormBean.adopter.email}">-->
-<!--					<f:validateRegex pattern="[A-Za-z@. ]+"></f:validateRegex>-->
-<!--				</h:inputText>-->
-<!--				<h:message for="email"/>-->
-<!--			</div>-->
 			<div>
 				<h:inputTextarea class="uk-textarea" rows="5" a:placeholder="Address" value="#{adopterFormBean.adopter.address}"></h:inputTextarea>
 			</div>
+
 			<div>
 				<h:inputText class="uk-input" type="text" a:placeholder="Date Today (dd-MM-yyyy)" id="todaysDate" value="#{adopterFormBean.adopter.aywanDate}">
 					<f:convertDateTime type="date" pattern="dd-MM-yyyy"/>
 				</h:inputText>
 				<h:message for="todaysDate"/>
 			</div>
+
 			<div>
 				<h:outputText value="Select Pets:" />
 				 <h:selectOneMenu id="something" value="#{adopterFormBean.animalId}" converter="javax.faces.Long">
